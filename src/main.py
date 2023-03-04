@@ -1,6 +1,6 @@
 from read_file import read_file
-from src.count_const import number_of_groups, interval_length
-from src.interval_distribution_series import dicts_of_age, get_keys, getting_the_result_interval
+from count_const import number_of_groups, interval_length
+from interval_distribution_series import dicts_of_age, get_keys, getting_the_result_interval
 
 data = []
 data_uniq = []
