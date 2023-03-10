@@ -8,7 +8,7 @@ def get_keys(arr_of_dicts, keys):
         keys.append(list(i.keys()))
 
 
-def getting_the_result_interval(data, keys, arr_of_dicts, new_arr_of_dicts, h):
+def getting_the_result_interval(data, keys, arr_of_dicts, new_arr_of_dicts, h, names_intervals):
     total = 0
     j = 0
     number_first = number = data[0]
@@ -17,9 +17,11 @@ def getting_the_result_interval(data, keys, arr_of_dicts, new_arr_of_dicts, h):
 
         if arr_of_dicts[-1] == arr_of_dicts[j]:
             new_arr_of_dicts.append({str(number) + ' - ' + str(keys[-1][0]): total})
+            names_intervals.append(str(number) + ' - ' + str(keys[-1][0]))
             total = 0
         j += 1
         if j % h == 0 and j != 0:
             new_arr_of_dicts.append({str(number_first + j - h) + ' - ' + str(number_first + j): total})
+            names_intervals.append(str(number_first + j - h) + ' - ' + str(number_first + j))
             number = number_first + j
             total = 0
