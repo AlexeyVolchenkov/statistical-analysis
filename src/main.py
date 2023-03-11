@@ -2,12 +2,13 @@ from read_file import read_file
 from count_const import number_of_groups, interval_length
 from interval_distribution_series import dicts_of_age, get_keys, getting_the_result_interval, properties
 from plotting import plotting_dist
+from discrete_distribution_series import get_normal_keys, properties_for_normal
 
 data = []
 data_uniq = []
 arr_of_dicts = []
 keys = []
-keysv2 = []
+normal_keys = []
 new_arr_of_dicts = []
 names_intervals = []
 
@@ -31,11 +32,14 @@ getting_the_result_interval(data, keys, arr_of_dicts, new_arr_of_dicts, h, names
 
 print("Количество человек попадающие в выбранные интервалы: ", new_arr_of_dicts)
 
+print(arr_of_dicts)
+
+get_normal_keys(keys, normal_keys)
+
+properties_for_normal(arr_of_dicts, normal_keys)
+
 properties(min(data), m, h, keys[-1][0], new_arr_of_dicts, names_intervals, new_arr_of_dicts)
 
-for i in keys:
-    keysv2.append(i[0])
-
-plotting_dist(arr_of_dicts, keysv2)
+plotting_dist(arr_of_dicts, normal_keys)
 
 plotting_dist(new_arr_of_dicts, names_intervals)
