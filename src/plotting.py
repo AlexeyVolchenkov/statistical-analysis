@@ -1,4 +1,3 @@
-import matplotlib
 import matplotlib.pyplot as plt
 
 def plotting_dist(new_arr_of_dicts, names_intervals):
